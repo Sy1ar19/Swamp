@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator), typeof(MoveState))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health;
