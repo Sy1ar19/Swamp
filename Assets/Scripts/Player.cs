@@ -1,11 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _health;
     [SerializeField] private Animator characterAnimator;
+    [SerializeField] private List<Weapon> _weapons;
+    [SerializeField] private Transform _shootPoint;
 
     private int _currentHealth;
+    private Weapon _currentWeapon;
 
     public int Money { get; private set; }
 
@@ -13,6 +18,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentHealth = _health;
+        _currentWeapon = _weapons[0];
     }
 
     public void ApplyDamage(int damage)
