@@ -12,9 +12,9 @@ public class ExplosiveBarrelScript : MonoBehaviour {
 
 	[Header("Prefabs")]
 	//The explosion prefab
-	public Transform explosionPrefab;
+	public UnityEngine.Transform explosionPrefab;
 	//The destroyed barrel prefab
-	public Transform destroyedBarrelPrefab;
+	public UnityEngine.Transform destroyedBarrelPrefab;
 
 	[Header("Customizable Options")]
 	//Minimum time before the barrel explodes

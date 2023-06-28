@@ -5,7 +5,7 @@ public class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
 
-    [SerializeField]protected Player Target { get; private set; }
+    protected Player Target { get; set; } 
 
     public void Enter(Player target)
     {

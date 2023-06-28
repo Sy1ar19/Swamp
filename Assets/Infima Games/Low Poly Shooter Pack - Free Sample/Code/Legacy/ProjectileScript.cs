@@ -16,7 +16,7 @@ public class ProjectileScript : MonoBehaviour {
 
 	[Header("Explosion Prefabs")]
 	//Explosion prefab
-	public Transform explosionPrefab;
+	public UnityEngine.Transform explosionPrefab;
 
 	[Header("Customizable Options")]
 	//Force added at start

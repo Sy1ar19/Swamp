@@ -1,55 +1,47 @@
-using StarterAssets;
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float jumpHeight = 1.0f;
-    [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private float _playerSpeed;
+    [SerializeField] private float _jumpHeight;
+    [SerializeField] private float _gravityValue = -9.81f;
 
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    private CharacterController _controller;
+    private Vector3 _playerVelocity;
+    private bool _isGrounded;
     private InputHandler _inputHandler;
-    private Transform _cameraTransform;
-    
+    private UnityEngine.Transform _cameraTransform;
+
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>();
         _inputHandler = InputHandler.Instance;
         _cameraTransform = Camera.main.transform;
     }
 
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
+        _isGrounded = _controller.isGrounded;
 
-        if (groundedPlayer && playerVelocity.y < 0)
+        if (_isGrounded && _playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            _playerVelocity.y = -2f;
         }
 
         Vector2 movement = _inputHandler.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = _cameraTransform.forward * move.z + _cameraTransform.right * move.x;
-        move.y = 0f;
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        //move.y = 0f;
+        _controller.Move(move * Time.deltaTime * _playerSpeed);
 
-/*        if (move != Vector3.zero)
+        if (_inputHandler.PlayerJumped() && _isGrounded)
         {
-            gameObject.transform.forward = move;
-        }*/
-
-        if (_inputHandler.PlayerJumped() && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -2.0f * _gravityValue);
         }
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        _playerVelocity.y += _gravityValue * Time.deltaTime;
+        _controller.Move(_playerVelocity * Time.deltaTime);
     }
 }

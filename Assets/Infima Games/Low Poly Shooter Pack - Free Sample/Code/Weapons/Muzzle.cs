@@ -16,7 +16,7 @@ namespace InfimaGames.LowPolyShooterPack
         
         [Tooltip("Socket at the tip of the Muzzle. Commonly used as a firing point.")]
         [SerializeField]
-        private Transform socket;
+        private UnityEngine.Transform socket;
 
         [Tooltip("Sprite. Displayed on the player's interface.")]
         [SerializeField]
@@ -123,7 +123,7 @@ namespace InfimaGames.LowPolyShooterPack
             }
         }
 
-        public override Transform GetSocket() => socket;
+        public override UnityEngine.Transform GetSocket() => socket;
 
         public override Sprite GetSprite() => sprite;
         public override AudioClip GetAudioClipFire() => audioClipFire;

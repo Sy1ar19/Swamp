@@ -15,7 +15,7 @@ namespace InfimaGames.LowPolyShooterPack
         
         [Tooltip("Left Arm Target. Determines what the IK target is.")]
         [SerializeField] 
-        private Transform armLeftTarget;
+        private UnityEngine.Transform armLeftTarget;
 
         [Range(0.0f, 1.0f)]
         [Tooltip("Inverse Kinematics Weight for the left arm.")]
@@ -29,13 +29,13 @@ namespace InfimaGames.LowPolyShooterPack
 
         [Tooltip("Left Arm Hierarchy. Root, Mid, Tip.")]
         [SerializeField]
-        private Transform[] armLeftHierarchy;
+        private UnityEngine.Transform[] armLeftHierarchy;
         
         [Header("Settings Arm Right")]
         
         [Tooltip("Left Arm Target. Determines what the IK target is.")]
         [SerializeField] 
-        private Transform armRightTarget;
+        private UnityEngine.Transform armRightTarget;
         
         [Range(0.0f, 1.0f)]
         [Tooltip("Inverse Kinematics Weight for the right arm.")]
@@ -49,13 +49,13 @@ namespace InfimaGames.LowPolyShooterPack
 
         [Tooltip("Right Arm Hierarchy. Root, Mid, Tip.")]
         [SerializeField]
-        private Transform[] armRightHierarchy;
+        private UnityEngine.Transform[] armRightHierarchy;
 
         [Header("Generic")]
 
         [Tooltip("Hint.")]
         [SerializeField]
-        private Transform hint;
+        private UnityEngine.Transform hint;
         
         [Range(0.0f, 1.0f)]
         [Tooltip("Hint Weight.")]
@@ -111,7 +111,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// <param name="target">IK Target.</param>
         /// <param name="weightPosition">Position Weight.</param>
         /// <param name="weightRotation">Rotation Weight.</param>
-        private void ComputeOnce(IReadOnlyList<Transform> hierarchy, Transform target, float weightPosition = 1.0f, float weightRotation = 1.0f)
+        private void ComputeOnce(IReadOnlyList<UnityEngine.Transform> hierarchy, UnityEngine.Transform target, float weightPosition = 1.0f, float weightRotation = 1.0f)
         {
             Vector3 targetOffsetPosition = Vector3.zero;
             Quaternion targetOffsetRotation = Quaternion.identity;

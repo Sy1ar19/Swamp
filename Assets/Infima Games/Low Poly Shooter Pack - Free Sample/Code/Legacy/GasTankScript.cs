@@ -14,9 +14,9 @@ public class GasTankScript : MonoBehaviour {
 
 	[Header("Prefabs")]
 	//Explosion prefab
-	public Transform explosionPrefab;
+	public UnityEngine.Transform explosionPrefab;
 	//The destroyed gas tank prefab
-	public Transform destroyedGasTankPrefab;
+	public UnityEngine.Transform destroyedGasTankPrefab;
 
 	[Header("Customizable Options")]
 	//Time before the gas tank explodes, 

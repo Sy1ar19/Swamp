@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _health;
     [SerializeField] private Animator characterAnimator;
     [SerializeField] private List<Weapon> _weapons;
-    [SerializeField] private Transform _shootPoint;
+    [SerializeField] private UnityEngine.Transform _shootPoint;
 
     private int _currentHealth;
     private Weapon _currentWeapon;

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class MoveState : State
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Player _target;
+    [SerializeField] private Player _player;
 
     private NavMeshAgent _agent;
     private Animator _animator;
@@ -18,10 +18,15 @@ public class MoveState : State
 
     private void FixedUpdate()
     {
-        if(Target != null)
+        /*Vector3 currentTargetPosition = Target.transform.position;
+        currentTargetPosition.y = this.transform.position.y;*/
+        _agent.SetDestination(_player.transform.position);
+
+/*        if (Target.transform != null)
         {
-            _agent.SetDestination(_target.transform.position);
-        }
+            _agent.SetDestination(Target.transform.position);
+            print(Target.transform.position);
+        }*/
     }
 
     private void OnEnable()

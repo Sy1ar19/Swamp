@@ -121,7 +121,7 @@ public class FirstPersonController : MonoBehaviour
     #region Head Bob
 
     public bool enableHeadBob = true;
-    public Transform joint;
+    public UnityEngine.Transform joint;
     public float bobSpeed = 10f;
     public Vector3 bobAmount = new Vector3(.15f, .05f, 0f);
 
@@ -721,7 +721,7 @@ public class FirstPersonController : MonoBehaviour
         
 
         GUI.enabled = fpc.enableHeadBob;
-        fpc.joint = (Transform)EditorGUILayout.ObjectField(new GUIContent("Camera Joint", "Joint object position is moved while head bob is active."), fpc.joint, typeof(Transform), true);
+        fpc.joint = (UnityEngine.Transform)EditorGUILayout.ObjectField(new GUIContent("Camera Joint", "Joint object position is moved while head bob is active."), fpc.joint, typeof(UnityEngine.Transform), true);
         fpc.bobSpeed = EditorGUILayout.Slider(new GUIContent("Speed", "Determines how often a bob rotation is completed."), fpc.bobSpeed, 1, 20);
         fpc.bobAmount = EditorGUILayout.Vector3Field(new GUIContent("Bob Amount", "Determines the amount the joint moves in both directions on every axes."), fpc.bobAmount);
         GUI.enabled = true;

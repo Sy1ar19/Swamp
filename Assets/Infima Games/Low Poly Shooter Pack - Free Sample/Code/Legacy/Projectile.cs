@@ -20,10 +20,10 @@ public class Projectile : MonoBehaviour {
 	public float maxDestroyTime;
 
 	[Header("Impact Effect Prefabs")]
-	public Transform [] bloodImpactPrefabs;
-	public Transform [] metalImpactPrefabs;
-	public Transform [] dirtImpactPrefabs;
-	public Transform []	concreteImpactPrefabs;
+	public UnityEngine.Transform [] bloodImpactPrefabs;
+	public UnityEngine.Transform [] metalImpactPrefabs;
+	public UnityEngine.Transform [] dirtImpactPrefabs;
+	public UnityEngine.Transform []	concreteImpactPrefabs;
 
 	public int GetDamage => _damage;
 	

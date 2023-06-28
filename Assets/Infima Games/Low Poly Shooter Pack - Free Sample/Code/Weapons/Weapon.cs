@@ -37,7 +37,7 @@ namespace InfimaGames.LowPolyShooterPack
 
         [Tooltip("Transform that represents the weapon's ejection port, meaning the part of the weapon that casings shoot from.")]
         [SerializeField]
-        private Transform socketEjection;
+        private UnityEngine.Transform socketEjection;
 
         [Header("Resources")]
 
@@ -126,7 +126,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// The player character's camera.
         /// </summary>
-        private Transform playerCamera;
+        private UnityEngine.Transform playerCamera;
         
         #endregion
 
@@ -212,7 +212,7 @@ namespace InfimaGames.LowPolyShooterPack
                 return;
 
             //Get Muzzle Socket. This is the point we fire from.
-            Transform muzzleSocket = muzzleBehaviour.GetSocket();
+            UnityEngine.Transform muzzleSocket = muzzleBehaviour.GetSocket();
             
             //Play the firing animation.
             const string stateName = "Fire";

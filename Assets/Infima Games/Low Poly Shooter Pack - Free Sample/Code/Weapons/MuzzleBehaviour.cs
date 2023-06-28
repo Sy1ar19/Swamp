@@ -14,7 +14,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Returns the firing socket. This is the point that we use to fire the bullets.
         /// </summary>
-        public abstract Transform GetSocket();
+        public abstract UnityEngine.Transform GetSocket();
 
         /// <summary>
         /// Returns the Sprite used on the Character's Interface.
