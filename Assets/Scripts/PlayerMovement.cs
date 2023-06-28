@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _playerVelocity;
     private bool _isGrounded;
     private InputHandler _inputHandler;
-    private UnityEngine.Transform _cameraTransform;
+    private Transform _cameraTransform;
 
 
     private void Start()
@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = _inputHandler.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = _cameraTransform.forward * move.z + _cameraTransform.right * move.x;
-        //move.y = 0f;
         _controller.Move(move * Time.deltaTime * _playerSpeed);
 
         if (_inputHandler.PlayerJumped() && _isGrounded)

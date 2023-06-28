@@ -18,15 +18,10 @@ public class MoveState : State
 
     private void FixedUpdate()
     {
-        /*Vector3 currentTargetPosition = Target.transform.position;
-        currentTargetPosition.y = this.transform.position.y;*/
-        _agent.SetDestination(_player.transform.position);
-
-/*        if (Target.transform != null)
+        if (Target != null)
         {
             _agent.SetDestination(Target.transform.position);
-            print(Target.transform.position);
-        }*/
+        }
     }
 
     private void OnEnable()

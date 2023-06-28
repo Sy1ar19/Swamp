@@ -23,11 +23,17 @@ public class AttackState : State
         }
 
         _lastAttackTime -= Time.deltaTime;
+
+        if(Target != null)
+        {
+        transform.LookAt(Target.transform);
+        }
     }
 
     private void Attack(Player target)
     {
         _animator.Play("Attack");
+        
         target.ApplyDamage(_damage);
     }
 
