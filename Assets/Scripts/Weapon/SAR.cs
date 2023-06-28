@@ -13,14 +13,23 @@ public class SAR : Weapon
     [SerializeField] private AudioClip _shotSFX;
     [SerializeField] private AudioSource _audioSource;
 
-    private bool canShoot = true;
+    private bool _canShoot = true;
+    private float _elapsedTime = 0f;
+    private float _shootInterval = 0.5f;
+
+    private void Update()
+    {
+        _elapsedTime += Time.deltaTime;
+    }
 
     public override void Shoot(InputAction.CallbackContext context)
     {
         _firePoint.LookAt(_targetLook);
 
-        if (context.phase == InputActionPhase.Started)
+        if (_canShoot && context.phase == InputActionPhase.Started && _elapsedTime >= _shootInterval)
         {
+            _elapsedTime = 0f;
+
             _audioSource.PlayOneShot(_shotSFX);
             _muzzleFlash.Play();
 
@@ -38,14 +47,13 @@ public class SAR : Weapon
                 }
             }
 
-            canShoot = false;
-
-            Invoke("ResetShootFlag", bullet.BulletLifeTIme);
+            _canShoot = false;
+            Invoke("ResetShootFlag", _shootInterval);
         }
     }
 
     private void ResetShootFlag()
     {
-        canShoot = true;
+        _canShoot = true;
     }
 }

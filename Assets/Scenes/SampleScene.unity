@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 200
-  characterAnimator: {fileID: 0}
+  _characterAnimator: {fileID: 0}
   _weapons:
   - {fileID: 1351574957}
   _shootPoint: {fileID: 732485303}
@@ -1520,7 +1520,7 @@ PrefabInstance:
     - target: {fileID: 7220082356903706587, guid: ba3f536bf0c0ebb4886bd5fb7bad704c,
         type: 3}
       propertyPath: _damage
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7220082356903706587, guid: ba3f536bf0c0ebb4886bd5fb7bad704c,
         type: 3}

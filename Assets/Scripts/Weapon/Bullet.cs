@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _bulletLifetime = 3f;
 
     public int Damage => _damage;
-    public float BulletLifeTIme => _bulletLifetime;
+    public float BulletLifeTime => _bulletLifetime;
 
     private void Update()
     {
