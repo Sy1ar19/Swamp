@@ -4,7 +4,7 @@ public class TargetDiedTransition : Transition
 {
     private void Update()
     {
-        if(Target == null)
+        if (Target == null)
         {
             NeedTransit = true;
         }

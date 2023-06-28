@@ -3,10 +3,9 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     private static InputHandler _instance;
+    private PlayerInputController _controller;
 
     public static InputHandler Instance => _instance;
-
-    private PlayerInputController _controller;
 
     private void Awake()
     {

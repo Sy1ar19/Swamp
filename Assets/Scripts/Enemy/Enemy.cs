@@ -15,10 +15,8 @@ public class Enemy : MonoBehaviour
     private MoveState _moveState;
 
     public event UnityAction<Enemy> Dying;
-
     public bool IsDead => _isDead;
     public int Reward => _reward;
-
     public Player Target => _target;
 
     private void Awake()

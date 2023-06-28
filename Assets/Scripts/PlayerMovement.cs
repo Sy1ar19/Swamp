@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private InputHandler _inputHandler;
     private Transform _cameraTransform;
 
-
     private void Start()
     {
         _controller = GetComponent<CharacterController>();

@@ -1,19 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _health;
-    [SerializeField] private Animator characterAnimator;
+    [SerializeField] private Animator _characterAnimator;
     [SerializeField] private List<Weapon> _weapons;
-    [SerializeField] private UnityEngine.Transform _shootPoint;
+    [SerializeField] private Transform _shootPoint;
 
     private int _currentHealth;
     private Weapon _currentWeapon;
-
     public int Money { get; private set; }
-
 
     private void Start()
     {
@@ -25,7 +22,6 @@ public class Player : MonoBehaviour
     {
         if (gameObject.active)
         {
-
             _currentHealth -= damage;
 
             if (_currentHealth <= 0)

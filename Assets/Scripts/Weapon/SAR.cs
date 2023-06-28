@@ -3,12 +3,12 @@ using UnityEngine.InputSystem;
 
 public class SAR : Weapon
 {
-    [SerializeField] private UnityEngine.Transform _firePoint;
+    [SerializeField] private Transform _firePoint;
     [SerializeField] private Camera _camera;
     [SerializeField] private int _damage;
     [SerializeField] private int _spread;
     [SerializeField] private int _shootForce;
-    [SerializeField] private UnityEngine.Transform _targetLook;
+    [SerializeField] private Transform _targetLook;
     [SerializeField] private ParticleSystem _muzzleFlash;
     [SerializeField] private AudioClip _shotSFX;
     [SerializeField] private AudioSource _audioSource;
@@ -37,6 +37,7 @@ public class SAR : Weapon
                     Destroy(bullet, 1f);
                 }
             }
+
             canShoot = false;
 
             Invoke("ResetShootFlag", bullet.BulletLifeTIme);
