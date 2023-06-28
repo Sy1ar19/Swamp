@@ -48,7 +48,7 @@ public class SAR : Weapon
             }
 
             _canShoot = false;
-            Invoke("ResetShootFlag", _shootInterval);
+            Invoke(nameof(ResetShootFlag), _shootInterval);
         }
     }
 

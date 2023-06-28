@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _playerSpeed;
     [SerializeField] private float _jumpHeight;
-    [SerializeField] private float _gravityValue = -9.81f;
+
+    private const float VelocityMultiplier = -2f;
 
     private CharacterController _controller;
     private Vector3 _playerVelocity;
@@ -36,10 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (_inputHandler.PlayerJumped() && _isGrounded)
         {
-            _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -2.0f * _gravityValue);
+            _playerVelocity.y += Mathf.Sqrt(_jumpHeight * VelocityMultiplier * Physics.gravity.y);
         }
 
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
+        _playerVelocity.y += Physics.gravity.y * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 }

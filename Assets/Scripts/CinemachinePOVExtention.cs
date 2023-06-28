@@ -16,7 +16,8 @@ public class CinemachinePOVExtention : CinemachineExtension
         base.Awake();
     }
 
-    protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
+    protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, 
+        CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
         if (vcam.Follow)
         {

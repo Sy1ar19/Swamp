@@ -9,11 +9,13 @@ public class MoveState : State
 
     private NavMeshAgent _agent;
     private Animator _animator;
+    private int _runAnimationHash;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _runAnimationHash = Animator.StringToHash("Run");
     }
 
     private void FixedUpdate()
@@ -26,7 +28,7 @@ public class MoveState : State
 
     private void OnEnable()
     {
-        _animator.Play("Run");
+        _animator.Play(_runAnimationHash);
     }
 
     private void OnDisable()
