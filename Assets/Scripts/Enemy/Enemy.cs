@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private bool _isDead = false;
     private Animator _animator;
     private MoveState _moveState;
+    private int _deathAnimationHash;
 
     public event UnityAction<Enemy> Dying;
     public bool IsDead => _isDead;
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _moveState = GetComponent<MoveState>();
+
+        _deathAnimationHash = Animator.StringToHash("Death");
     }
 
     public void TakeDamage(int damage)
@@ -47,7 +50,7 @@ public class Enemy : MonoBehaviour
         _isDead = true;
 
         _animator.StopPlayback();
-        _animator.Play("Death");
+        _animator.Play(_deathAnimationHash);
 
         StartCoroutine(DestroyAfterDelay(_timeToDestroy));
     }

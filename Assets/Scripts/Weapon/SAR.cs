@@ -16,6 +16,7 @@ public class SAR : Weapon
     private bool _canShoot = true;
     private float _elapsedTime = 0f;
     private float _shootInterval = 0.5f;
+    private float _bulletDestroyDelay = 1f;
 
     private void Update()
     {
@@ -41,9 +42,8 @@ public class SAR : Weapon
             {
                 if (hit.collider.gameObject.TryGetComponent(out Enemy enemy))
                 {
-                    Debug.Log("Enemy!!!!!!!!!!!");
                     enemy.TakeDamage(_damage);
-                    Destroy(bullet, 1f);
+                    Destroy(bullet, _bulletDestroyDelay);
                 }
             }
 
